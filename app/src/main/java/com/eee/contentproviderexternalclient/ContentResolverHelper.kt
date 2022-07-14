@@ -23,7 +23,7 @@ class ContentResolverHelper(private var mContext: Context) {
         val projection = arrayOf<String>(KEY_ID, KEY_NAME, KEY_EMAIL)*/
 
         val cursor = contentResolver.query(CONTENT_URI, null, null, null, null)
-        CommonUtils.log("@# cursor : ${cursor?.count?: 0}")
+        CommonUtils.log("@# cursor : ${cursor?.count?: 0} / $cursor")
         if (cursor != null && cursor.count > 0) {
             while (cursor.moveToNext()) {
 
