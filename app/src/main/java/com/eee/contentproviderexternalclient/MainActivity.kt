@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             if (granted) {
 
                 val contentResolverHelper = ContentResolverHelper(this)
-                //contentResolverHelper.insertCompanyTMRecord("제목1", "내용1")
+                contentResolverHelper.insertCompanyTMRecord("외부1", "외부1")
                 contentResolverHelper.allItems()
 
             } else {

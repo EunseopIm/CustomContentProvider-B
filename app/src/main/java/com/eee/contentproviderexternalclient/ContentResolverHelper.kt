@@ -4,6 +4,7 @@ import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 
 class ContentResolverHelper(private var mContext: Context) {
 
@@ -11,7 +12,7 @@ class ContentResolverHelper(private var mContext: Context) {
 
         const val TABLE_NAME = "item"
         const val PROVIDER_NAME = "com.app.first.MyContentProvider"
-        const val URL = "content://$PROVIDER_NAME"
+        const val URL = "content://$PROVIDER_NAME/$TABLE_NAME"
         val CONTENT_URI = Uri.parse(URL)
     }
 
@@ -23,7 +24,7 @@ class ContentResolverHelper(private var mContext: Context) {
         val projection = arrayOf<String>(KEY_ID, KEY_NAME, KEY_EMAIL)*/
 
         val cursor = contentResolver.query(CONTENT_URI, null, null, null, null)
-        CommonUtils.log("@# cursor : ${cursor?.count?: 0} / $cursor")
+        Log.v(">>>", "@# cursor : ${cursor?.count?: 0} / $cursor")
         if (cursor != null && cursor.count > 0) {
             while (cursor.moveToNext()) {
 
@@ -35,7 +36,7 @@ class ContentResolverHelper(private var mContext: Context) {
                 val title = cursor.getString(titleIndex)
                 val content = cursor.getString(contentIndex)
 
-                CommonUtils.log("@# id[$id] title[$title] content[$content]")
+                Log.v(">>>", "@# id[$id] title[$title] content[$content]")
             }
         }
     }
@@ -72,6 +73,9 @@ class ContentResolverHelper(private var mContext: Context) {
         val where: String = KEY_ID + "=?"
         val selectionArgs = arrayOf(index.toString())
         contentResolver.delete(CONTENT_URI, where, selectionArgs)*/
+
+        val url = "$URL/$id"
+        contentResolver.delete(Uri.parse(url), null, null)
     }
 
     fun updateCompanyTMRecord(id: Long) {
