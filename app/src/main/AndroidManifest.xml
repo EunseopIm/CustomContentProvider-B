@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.eee.contentproviderexternalclient">
 
+    <uses-permission android:name="com.app.first.READ_DATABASE"/>
+    <uses-permission android:name="com.app.first.WRITE_DATABASE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
