@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.eee.contentproviderexternalclient">
+    package="com.study.providerb">
 
     <uses-permission android:name="com.app.first.READ_DATABASE"/>
     <uses-permission android:name="com.app.first.WRITE_DATABASE"/>
@@ -21,7 +21,7 @@
         android:theme="@style/Theme.ContentProviderExternalClient"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.study.providerb.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.eee.contentproviderexternalclient
+package com.study.providerb
 
 import android.content.ContentResolver
 import android.content.ContentValues

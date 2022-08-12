@@ -1,4 +1,4 @@
-package com.eee.contentproviderexternalclient
+package com.study.providerb
 
 import android.content.pm.PackageManager
 import android.os.Bundle
