@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.study.providerb">
 
-    <uses-permission android:name="com.app.first.READ_DATABASE"/>
-    <uses-permission android:name="com.app.first.WRITE_DATABASE"/>
+    <uses-permission android:name="com.study.providera.READ_DATABASE"/>
+    <uses-permission android:name="com.study.providera.WRITE_DATABASE"/>
 
     <queries>
-        <package android:name="com.app.first"/>
+        <package android:name="com.study.providera"/>
     </queries>
 
     <application
