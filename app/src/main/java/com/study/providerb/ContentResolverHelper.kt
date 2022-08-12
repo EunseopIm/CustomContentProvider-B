@@ -97,14 +97,22 @@ class ContentResolverHelper(private var mContext: Context) {
         return values
     }
 
-    fun customMethodGetId() {
+    /**
+     * 커스텀 메서드 - id 가져오기
+     */
+    fun customMethodGetId(): String? {
+
+        var value: String? = null
 
         val bundle: Bundle? = contentResolver.call(CONTENT_URI, "getId", null, null)
 
         bundle?.let {
 
-            Log.v(">>>", "customMethodGetId : ${it.getString("id")}")
-
+            val id = it.getString("id")
+            Log.v(">>>", "customMethodGetId : $id")
+            value = id
         }
+
+        return value
     }
 }
