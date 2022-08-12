@@ -4,6 +4,7 @@ import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Context
 import android.net.Uri
+import android.os.Bundle
 import android.util.Log
 
 class ContentResolverHelper(private var mContext: Context) {
@@ -98,5 +99,15 @@ class ContentResolverHelper(private var mContext: Context) {
         values.put("content", content)
 
         return values
+    }
+
+    fun customMethodGetId() {
+
+        val bundle: Bundle? = contentResolver.call(CONTENT_URI, "getId", null, null)
+
+        bundle?.let {
+            CommonUtils.log("@# customMethodGetId : ${it.getString("id")}")
+
+        }
     }
 }

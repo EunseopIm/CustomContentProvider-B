@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val contentResolverHelper = ContentResolverHelper(this)
         contentResolverHelper.insertCompanyTMRecord("외부1", "외부1")
         contentResolverHelper.allItems()
+        contentResolverHelper.customMethodGetId()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
